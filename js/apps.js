@@ -110,8 +110,27 @@ const showDetails= async(id)=>{
    `
 };
 
-const countDown = (e)=>{
+const countDown = (id)=>{
    document.getElementById("modal2").show();
+   const modalItem2 = document.getElementById("modalItem2");
+   modalItem2.innerHTML =`
+    <img class="mb-3" src="./images/hand.png"> 
+    <h1 class="text-4xl font-extrabold mb-3">Congrates</h1>
+    <p class="mb-4">Adoption Process is Start For Your Pet</p>
+    <h1 id="countText" class="text-6xl font-extrabold">3</h1>
+   `
+   let count = 3;
+  let time = setInterval(()=>{
+    count -=1;
+    document.getElementById("countText").innerText = count;
+    if(count===1){
+        document.getElementById("modal2").close() 
+        clearInterval(time);
+        const btn = document.getElementById(id)
+        btn.setAttribute("disabled" , true);
+        btn.classList.add("bg-gray-200","text-gray-400")
+    }   
+   },1000)
 }
 
 
@@ -158,7 +177,7 @@ const display=(data)=>{
            </div>
            <div class="flex gap-2 lg:gap-6">
              <button onclick = "postImage('${pet?.image}')" class="py-2 hover:bg-bgColor px-4 rounded-xl border"><i class="fa-regular fa-thumbs-up"></i></button>
-             <button onclick ="countDown()" class="py-2 hover:bg-bgColor text-PrimaryColor font-bold px-4 rounded-xl border">Adopt</button>
+             <button id="countId-${pet.petId}" onclick ="countDown(this.id)" class="py-2 hover:bg-bgColor text-PrimaryColor font-bold px-4 rounded-xl border">Adopt</button>
              <button onclick="showDetails('${pet.petId}')" class="py-2 hover:bg-bgColor text-PrimaryColor font-bold px-4 rounded-xl border">Details</button>
            </div>
    
