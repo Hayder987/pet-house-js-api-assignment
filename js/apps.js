@@ -1,13 +1,20 @@
 
 const getCategories = async ()=>{
+   try{
    const url = "https://openapi.programming-hero.com/api/peddy/categories";
    const res = await fetch(url);
    const data = await res.json();
    displayCategories(data.categories);
+
+   }
+   catch(err){
+    console.log(err)
+   }
 };
 
 const getAllPets = async(condition, pets)=>{  
-   let url ;
+   try{
+    let url ;
    if(condition){
     url = `https://openapi.programming-hero.com/api/peddy/category/${pets}`
     const res = await fetch(url);
@@ -30,6 +37,10 @@ const getAllPets = async(condition, pets)=>{
     })
         loaderControl("loder");
         displayPets(data.pets,false)   
+   }
+   }
+   catch(err){
+    console.log(err)
    }
 };
 
@@ -66,7 +77,8 @@ const displayPets = (pets, sort)=>{
 };
 
 const showDetails= async(id)=>{
-   const url = `https://openapi.programming-hero.com/api/peddy/pet/${id}`;
+   try{
+    const url = `https://openapi.programming-hero.com/api/peddy/pet/${id}`;
    const res = await fetch(url);
    const data = await res.json();
    const item = data.petData;
@@ -108,6 +120,10 @@ const showDetails= async(id)=>{
    </div>
 
    `
+   }
+   catch(err){
+    console.log(err)
+   }
 };
 
 const countDown = (id)=>{
@@ -123,7 +139,7 @@ const countDown = (id)=>{
   let time = setInterval(()=>{
     count -=1;
     document.getElementById("countText").innerText = count;
-    if(count===1){
+    if(count===0){
         document.getElementById("modal2").close() 
         clearInterval(time);
         const btn = document.getElementById(id)
