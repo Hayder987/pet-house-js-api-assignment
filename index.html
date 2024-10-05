@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,15 +34,55 @@
 
 </head>
 <body>
-    <header>
-       
+    <!----- header-section-start ------------------------------->
+    <header class="px-4 md:px-24 py-6">
+        <!-- navbar ----------->
+       <nav class="flex justify-between items-center mb-12">
+        <div class="flex justify-center items-center gap-4">
+            <img src="./images/logo.webp" alt="">
+            <h1 class="text-3xl font-bold">Peddy</h1>
+        </div>
+        <div class="flex md:hidden">
+            <i class="fa-solid fa-bars-staggered fa-2x"></i>
+        </div>
+        <div class="hidden md:flex">
+            <ul class="flex gap-8 font-medium text-gray-600 text-xl">
+                <li class="">Home</li>
+                <li class="">Shop</li>
+                <li class="">Contact</li>
+            </ul>
+        </div>
+        <div class="w-14 h-14 rounded-full border-2 flex justify-center items-center">
+            <i class="fa-regular fa-user"></i>
+        </div>
+       </nav>
+       <!-- banner ----------->
+        <section class="flex flex-col gap-12">
+            <div class="flex flex-col justify-center items-center">
+                <div class="flex justify-center items-center gap-8 mb-10">
+                    <h3 class="text-2xl font-bold text-gray-500">Bringing Families Together</h3>
+                    <span class=""><img class="w-8 h-8" src="./images/flame.png" alt="" class=""></span>
+                </div>
+                <h1 class="w-full md:w-5/12 text-4xl md:text-6xl font-bold text-center mb-6">Your Path To Adoption Start Here</h1>
+                <p  class="w-full md:w-6/12 text-center text-gray-500 mb-8">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+                <a href="" class=""><button class="px-6 py-2 bg-PrimaryColor rounded-xl text-xl font-semibold text-white">View More</button></a>
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="./images/pet.webp" alt="" class="">
+            </div>
+        </section>
     </header>
+    <!----- header-section-end ------------------------------->
+    <!----- main-section-start ------------------------------->
     <main>
 
     </main>
+    <!----- main-section-ends ------------------------------->
+    <!----- footer-section-start ------------------------------->
     <footer>
 
     </footer>
+    <!----- footer-section-ends ------------------------------->
     
 
     <script src="./js/apps.js"></script>
