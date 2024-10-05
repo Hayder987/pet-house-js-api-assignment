@@ -9,3 +9,10 @@ const btnHandellar =(id)=>{
       btn.classList.remove("rounded-xl")
       btn.classList.add("bg-bgColor","rounded-full");
 };
+
+
+const loaderControl =(id)=>{
+   let loader = document.getElementById(id);
+   loader.classList.remove("hidden");
+    loader.classList.remove("flex");
+}

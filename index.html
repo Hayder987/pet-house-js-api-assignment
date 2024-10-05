@@ -35,9 +35,9 @@
 </head>
 <body class="inter">
     <!----- header-section-start ------------------------------->
-    <header class="px-4 mb-16 md:mb-24 md:px-24 py-6">
+    <header class="px-4 mb-16 md:mb-24 md:px-6 lg:px-8 py-6">
         <!-- navbar ----------->
-       <nav class="flex justify-between items-center mb-12">
+       <nav class="flex justify-between items-center mb-16">
         <div class="flex justify-center items-center gap-4">
             <img src="./images/logo.webp" alt="">
             <h1 class="text-3xl font-bold">Peddy</h1>
@@ -64,7 +64,7 @@
                     <span class=""><img class="w-8 h-8" src="./images/flame.png" alt="" class=""></span>
                 </div>
                 <h1 class="w-full md:w-5/12 text-4xl md:text-6xl font-bold text-center mb-6">Your Path To Adoption Start Here</h1>
-                <p  class="w-full md:w-6/12 text-center text-gray-500 mb-8">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+                <p  class="w-full md:w-6/12 text-center text-gray-500 mb-8">Adaptations for attaining speed have been manifested in a variety of ways. The main aim is to offer least resistance in the attainment of speed.</p>
                 <a href="#friendSection" class=""><button class="px-6 py-3 bg-PrimaryColor rounded-xl text-xl font-semibold text-white">View More</button></a>
             </div>
             <div class="flex justify-center items-center">
@@ -74,11 +74,11 @@
     </header>
     <!----- header-section-end ------------------------------->
     <!----- main-section-start ------------------------------->
-    <main class="px-4 mb-16 md:mb-24 md:px-24">
+    <main class="px-4 mb-16 md:mb-24 md:px-6 lg:px-8">
         <!-- friend-section -->
         <section id="friendSection" class="flex flex-col justify-center items-center mb-12">
           <h1 class="text-4xl font-extrabold mb-6">Adopt  Your  Best Friend</h1>
-          <p class="text-base text-gray-500 w-full md:w-6/12 text-center">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+          <p class="text-base text-gray-500 w-full md:w-6/12 text-center"> “Rescued is my favorite breed.” “You can't buy love, but you can rescue it.” “Money can buy a fine dog, but only love can make him wag his tail.”</p>
         </section>
         <!-- dynamic Category section -->
          <section class="mb-8 grid grid-cols-2 md:grid-cols-4  gap-6 md:gap-12" id="categorySection"></section>
@@ -89,14 +89,19 @@
          </div>
 
          <!-- dynamic-card section ------>
-        <section class="flex gap-2 md:gap-6">
+        <section class=" flex w-full gap-2 md:gap-6">
+            <span id="loder" class=" loading loading-bars loading-lg hidden"></span>
             <!-- dynamic-card -->
-             <div id="cardDiv" class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-8/12 p-2 md:p-6 rounded-xl" >
-                
+             <div  class="w-9/12   p-2 md:p-6 rounded-xl" >
+                 <div id="cardDiv" class="grid gap-6  grid-cols-1 lg:grid-cols-3">
+                   
+                 </div>
              </div>
              <!-- dynamic-img -->
-              <div id="" class="w-4/12 p-2 md:p-6  rounded-xl border-2" >
+              <div  class="w-3/12 max-h-full  " >
+                 <div id="dynamicImg" class="grid gap-4 grid-cols-1 lg:grid-cols-2 border-2 py-12 px-2 md:px-6 rounded-xl ">
 
+                 </div>
               </div>
         </section>
 
