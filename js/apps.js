@@ -65,9 +65,57 @@ const displayPets = (pets, sort)=>{
    },2000)
 };
 
-const display=(data)=>{
-    
+const showDetails= async(id)=>{
+   const url = `https://openapi.programming-hero.com/api/peddy/pet/${id}`;
+   const res = await fetch(url);
+   const data = await res.json();
+   const item = data.petData;
+   document.getElementById("modal1").show();
 
+   const modalItem = document.getElementById("modalItem");
+   modalItem.innerHTML = `
+   <img class="rounded-xl object-cover w-full mb-4" src=${item.image}>
+   <h3 class="text-xl font-semibold ">${item?.pet_name || "No Name Found"}</h3>
+   <div class="border-b pb-4">
+      <div class="flex gap-6 mb-4 ">
+        <div>
+          <span><i class="fa-solid fa-table-cells-large"></i></span>
+          <span class="text-gray-500">Breed: ${item?.breed || "Not Available"}</span>
+        </div>
+        <div>
+          <span><i class="fa-regular fa-calendar"></i></span>
+          <span class="text-gray-500">Birth: ${item?.date_of_birth || "Not Available"}</span>
+        </div>
+      </div>
+      <div class="flex gap-6 mb-4">
+         <div class="flex gap-4 ">
+           <span><i class="fa-solid fa-venus"></i></span>
+           <span class="text-gray-500">Gender: ${item?.gender || "Not identified"}</span>
+         </div>
+         <div class="flex gap-4 ">
+           <span><i class="fa-solid fa-dollar-sign"></i></span>
+           <span class="text-gray-500">Price: ${item?.price || "Not For Sale"}$</span>
+         </div>
+      </div>
+      <div class="flex gap-4 >
+        <span><i class="fa-solid fa-venus"></i></span>
+        <span class="text-gray-500">vaccinated status: ${item?.vaccinated_status || "Not identified"}</span>
+      </div>
+   </div>
+   <div>
+     <h2 class="font-bold mb-3">Details Information</h2>
+     <p class="text-gray-500">${item.pet_details}</p>
+   </div>
+
+   `
+};
+
+const countDown = (e)=>{
+   document.getElementById("modal2").show();
+}
+
+
+const display=(data)=>{
     if(data.length===0){
         cardDiv.classList.remove("grid");
         cardDiv.classList.add("flex","flex-col","justify-center","items-center");
@@ -83,7 +131,6 @@ const display=(data)=>{
         document.getElementById("sortBtn").classList.remove("hidden");
         cardDiv.classList.add("grid")
        };
-
 
     data.forEach(pet=>{
         const card = document.createElement("div");
@@ -111,8 +158,8 @@ const display=(data)=>{
            </div>
            <div class="flex gap-2 lg:gap-6">
              <button onclick = "postImage('${pet?.image}')" class="py-2 hover:bg-bgColor px-4 rounded-xl border"><i class="fa-regular fa-thumbs-up"></i></button>
-             <button class="py-2 hover:bg-bgColor text-PrimaryColor font-bold px-4 rounded-xl border">Adopt</button>
-             <button class="py-2 hover:bg-bgColor text-PrimaryColor font-bold px-4 rounded-xl border">Details</button>
+             <button onclick ="countDown()" class="py-2 hover:bg-bgColor text-PrimaryColor font-bold px-4 rounded-xl border">Adopt</button>
+             <button onclick="showDetails('${pet.petId}')" class="py-2 hover:bg-bgColor text-PrimaryColor font-bold px-4 rounded-xl border">Details</button>
            </div>
    
         `

@@ -88,9 +88,13 @@
           <button id="sortBtn" class="px-6 py-3 bg-PrimaryColor rounded-xl text-xl font-semibold text-white">Sort by Price</button>
          </div>
 
-         <!-- dynamic-card section ------>
-        <section class=" flex w-full gap-2 md:gap-6">
+         <!-- loder-section -->
+         <section class="flex justify-center items-center">
             <span id="loder" class=" loading loading-bars loading-lg hidden"></span>
+         </section>
+
+         <!-- dynamic-card section ------>
+        <section class=" flex w-full gap-2 md:gap-6">     
             <!-- dynamic-card -->
              <div  class="w-9/12   p-2 md:p-6 rounded-xl" >
                  <div id="cardDiv" class="grid gap-6  grid-cols-1 lg:grid-cols-3">
@@ -104,8 +108,35 @@
                  </div>
               </div>
         </section>
+        <!-- modal section -->
+        <dialog id="modal1" class="modal modal-middle sm:modal-middle">
+          <div class="modal-box">
+            <div id="modalItem" class="p-4">
 
-   
+            </div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+
+        <dialog id="modal2" class="modal modal-middle sm:modal-middle">
+            <div class="modal-box">
+              <div id="modalItem2" class="p-4">
+                  <h1>hello</h1>
+              </div>
+              <div class="modal-action">
+                <form method="dialog">
+                  <!-- if there is a button in form, it will close the modal -->
+                  <button class="btn">Close</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
+
     </main>
     <!----- main-section-ends ------------------------------->
     <!----- footer-section-start ------------------------------->
