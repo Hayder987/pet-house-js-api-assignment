@@ -46,8 +46,45 @@ const displayCategories =(categories)=>{
 };
 
 const displayPets = (pets)=>{
-   console.log(pets)
-}
+   const cardDiv = document.getElementById("cardDiv");
+   cardDiv.innerHTML = "";
+   if(pets.length===0){
+    cardDiv.classList.remove("grid")
+    cardDiv.innerHTML=`
+      <img src="./images/error.webp">
+    `
+   }
+   else{
+    cardDiv.classList.add("grid")
+   };
+
+   pets.forEach(pet=>{
+     const card = document.createElement("div");
+     card.classList.add("p-3", "border", "rounded-xl")
+     card.innerHTML = `
+        <img class="h-[180px] object-cover w-full rounded-lg mb-6" src=${pet?.image}>
+        <h3 class="text-xl font-semibold mb-2">${pet?.pet_name}</h3>
+        <div class="flex gap-4 mb-2">
+          <span><i class="fa-solid fa-table-cells-large"></i></span>
+          <span class="text-gray-500">Breed: ${pet?.breed || "Not Available"}</span>
+        </div>
+        <div class="flex gap-4 mb-2">
+          <span><i class="fa-regular fa-calendar"></i></span>
+          <span class="text-gray-500">Birth: ${pet?.date_of_birth || "Not Available"}</span>
+        </div>
+        <div class="flex gap-4 mb-2">
+          <span><i class="fa-solid fa-venus"></i></span>
+          <span class="text-gray-500">Gender: ${pet?.gender || "Not identified"}</span>
+        </div>
+        <div class="flex gap-4 mb-2">
+          <span><i class="fa-solid fa-dollar-sign"></i></span>
+          <span class="text-gray-500">Price: ${pet?.price}$</span>
+        </div>
+
+     `
+     cardDiv.appendChild(card);
+   });
+};
 
 
 
