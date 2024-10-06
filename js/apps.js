@@ -58,7 +58,7 @@ const displayCategories =(categories)=>{
    });
    button.innerHTML = `
       <p class=""><img class="w-12 h-12" src= ${item.category_icon}></p>
-      <p class="text-2xl font-bold">${item.category}</p>
+      <p class="text-base md:text-2xl font-bold">${item.category}</p>
    `
    categorySection.appendChild(button);
   });
@@ -144,7 +144,8 @@ const countDown = (id)=>{
         clearInterval(time);
         const btn = document.getElementById(id)
         btn.setAttribute("disabled" , true);
-        btn.classList.add("bg-gray-200","text-gray-400")
+        btn.classList.add("bg-gray-200","text-gray-400");
+        btn.innerText = "Adapted";
     }   
    },1000)
 }

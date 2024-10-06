@@ -1,3 +1,14 @@
+
+document.getElementById("btnBar").addEventListener("click", ()=>{
+   document.getElementById("barMenu").classList.toggle("hidden");
+   const barBtn =document.getElementsByClassName("barBtn");
+   for(let item of barBtn){
+      item.addEventListener("click", ()=>{
+         document.getElementById("barMenu").classList.add("hidden");
+      })
+   }
+});
+
 const btnHandellar =(id)=>{
 
    const allBtn = document.getElementsByClassName("allBtn");
