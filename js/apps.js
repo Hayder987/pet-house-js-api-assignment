@@ -111,7 +111,7 @@ const showDetails= async(id)=>{
            <span class="text-gray-500">Price: ${item?.price || "Not For Sale"}$</span>
          </div>
       </div>
-      <div class="flex gap-4 >
+      <div class="flex gap-4" >
         <span><i class="fa-solid fa-venus"></i></span>
         <span class="text-gray-500">vaccinated status: ${item?.vaccinated_status || "Not identified"}</span>
       </div>
