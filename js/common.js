@@ -1,4 +1,4 @@
-
+// Nav- menu display--------------------//
 document.getElementById("btnBar").addEventListener("click", ()=>{
    document.getElementById("barMenu").classList.toggle("hidden");
    const barBtn =document.getElementsByClassName("barBtn");
@@ -9,6 +9,7 @@ document.getElementById("btnBar").addEventListener("click", ()=>{
    }
 });
 
+// category btn style handale--------------------//
 const btnHandellar =(id)=>{
 
    const allBtn = document.getElementsByClassName("allBtn");
@@ -21,7 +22,7 @@ const btnHandellar =(id)=>{
       btn.classList.add("bg-bgColor","rounded-full");
 };
 
-
+//loder function-----------------------------//
 const loaderControl =(id)=>{
    let loader = document.getElementById(id);
    loader.classList.remove("hidden");

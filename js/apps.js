@@ -44,12 +44,13 @@ const getAllPets = async(condition, pets)=>{
    }
 };
 
+// display categories--------------------------//
 const displayCategories =(categories)=>{
   const categorySection = document.getElementById("categorySection");
 
   categories.forEach(item =>{
    const button = document.createElement("button");
-   button.classList.add("allBtn","border-2", "rounded-xl", "flex", "justify-center", "items-center","gap-3","px-12","md:px-4", "py-4")
+   button.classList.add("allBtn","border-2", "rounded-xl", "flex", "justify-center", "items-center","gap-3","p-4")
    button.setAttribute("id", `btn-${item.id}`);
    button.addEventListener("click", ()=>{
     btnHandellar(`btn-${item.id}`);
@@ -76,6 +77,7 @@ const displayPets = (pets, sort)=>{
    },2000)
 };
 
+// details Modal---------------------------//
 const showDetails= async(id)=>{
    try{
     const url = `https://openapi.programming-hero.com/api/peddy/pet/${id}`;
@@ -126,6 +128,7 @@ const showDetails= async(id)=>{
    }
 };
 
+// count down Modal--------------------------------//
 const countDown = (id)=>{
    document.getElementById("modal2").show();
    const modalItem2 = document.getElementById("modalItem2");
@@ -150,7 +153,7 @@ const countDown = (id)=>{
    },1000)
 }
 
-
+//pets Display------------------------///
 const display=(data)=>{
     if(data.length===0){
         cardDiv.classList.remove("grid");
@@ -172,7 +175,7 @@ const display=(data)=>{
         const card = document.createElement("div");
         card.classList.add("p-3", "border", "rounded-xl")
         card.innerHTML = `
-           <img class="h-[180px] object-cover w-full rounded-lg mb-6" src=${pet?.image || "No Image Found"}>
+           <img class="h-[190px] object-cover w-full rounded-lg mb-6" src=${pet?.image || "No Image Found"}>
            <div class="border-b mb-6">
               <h3 class="text-xl font-semibold mb-2">${pet?.pet_name || "No Name Found"}</h3>
               <div class="flex gap-4 mb-2">
@@ -203,7 +206,8 @@ const display=(data)=>{
         document.getElementById("loder").classList.add("hidden");
       });
    };
-
+   
+   //like div---------------///
    const postImage=(img)=>{
    const dynamicImg = document.getElementById("dynamicImg");
      const imgDiv = document.createElement("div");
